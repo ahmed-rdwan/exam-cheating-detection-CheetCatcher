@@ -16,7 +16,7 @@ A desktop AI application that monitors exam sessions via video (uploaded or live
 
 ## 📹 Demo
 
-<video src="https://raw.githubusercontent.com/ahmed-rdwan/exam-cheating-detection-CheetCatcher/main/assets/demo.mp4" controls width="700"></video>
+<video src="https://github.com/ahmed-rdwan/exam-cheating-detection-CheetCatcher/raw/main/assets/demo.mp4" controls width="700"></video>
 
 ---
 
