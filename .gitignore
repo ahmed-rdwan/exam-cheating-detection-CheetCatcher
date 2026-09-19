@@ -1,0 +1,33 @@
+# ==== Virtual environment ====
+venv/
+.venv/
+env/
+
+# ==== Python cache ====
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ==== PyInstaller build artifacts ====
+build/
+dist/
+*.spec
+
+# ==== Pretrained model weights (auto-downloaded on first run) ====
+models/*.pt
+
+# ==== Firebase credentials — NEVER commit this ====
+firebase_credentials.json
+
+# ==== Runtime data / test outputs (personal, not for the repo) ====
+alerts/screenshots/
+alerts/local_alerts.json
+videos/*
+!videos/.gitkeep
+
+# ==== OS/editor junk ====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
