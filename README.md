@@ -130,7 +130,7 @@ These three mechanisms are what make this project feel production-grade:
 ## 🚀 Getting Started
 
 ### Option 1: Download and Run (no Python needed)
->⬇️ **[Download CheetCatcher.zip (275MB)](https://github.com/ahmed-rdwan/exam-cheating-detection-CheetCatcher/releases/download/v1.0.0/CheetCatcher.zip)**
+>⬇️ **[Download CheetCatcher.zip (275MB)](https://github.com/ahmed-rdwan/exam-cheating-detection-CheetCatcher/releases)**
 >
 > 
 > Unzip and double-click `CheetCatcher.exe` — no installation required.
