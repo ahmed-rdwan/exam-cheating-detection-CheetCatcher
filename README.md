@@ -37,6 +37,36 @@ A desktop AI application that monitors exam sessions via video (uploaded or live
 
 ---
 
+---
+
+## 🔄 Architecture Flow
+
+```mermaid
+flowchart TD
+    A["📹 Video / Camera<br/>Live Feed / Upload"] --> B["🎯 YOLO<br/>Person + Phone Detection"]
+    B --> C["🏷️ BoT-SORT<br/>Track Student"]
+    C --> D["🖼️ Background Filter<br/>Remove Irrelevant Persons"]
+    C --> E["📱 Phone Association<br/>Link Phone to Student"]
+    D --> F["🙂 Head & Body Pose<br/>Yaw / Pitch / Posture"]
+    E --> F
+    F --> G["🔍 Persistence Filtering<br/>Remove False Positives"]
+    G --> H["📊 Scoring Engine<br/>Phone · Looking Away · Face Missing · Posture"]
+    H --> I{"Score ≥ Threshold?"}
+    I -- No --> J["✅ Normal<br/>No Action"]
+    I -- Yes --> K["⏱️ Alert Cooldown<br/>Prevent Repeated Alerts"]
+    K --> L["📸 Screenshot<br/>Saved Locally"]
+    K --> M["🔥 Firebase<br/>Store Metadata"]
+    L --> N["📋 Alert Queue<br/>Thread-Safe"]
+    M --> N
+    N --> O["🖥️ Tkinter Main Thread<br/>Update UI"]
+    O --> P["▶️ Video Display"]
+    O --> Q["📋 Alert Table"]
+    O --> R["🔔 Popup Notification"]
+    R --> S["🖼️ Screenshot Viewer"]
+```
+
+---
+
 ## 🧠 How the Scoring Engine Works
 
 This is the most original part of the project — "cheating" is never a direct model output. Instead, the system uses a **point-based scoring engine** that accumulates evidence over time, per student:
